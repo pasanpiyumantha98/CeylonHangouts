@@ -19,4 +19,5 @@ public class UserDto {
     String gender;
     String stat;
     int phone;
+    String prefgen;
 }
