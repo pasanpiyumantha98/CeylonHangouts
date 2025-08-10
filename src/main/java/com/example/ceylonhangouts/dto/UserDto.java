@@ -16,4 +16,7 @@ public class UserDto {
     String Country;
     String email;
     String password;
+    String gender;
+    String stat;
+    int phone;
 }
