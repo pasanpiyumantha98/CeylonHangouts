@@ -25,7 +25,7 @@ public class CeylonHangoutsApplication {
 
         return http.build();
     }
-    
+
     @Bean
     ModelMapper modelMapper() {
         return new ModelMapper();
