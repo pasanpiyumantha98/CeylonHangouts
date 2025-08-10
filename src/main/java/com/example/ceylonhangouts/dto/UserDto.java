@@ -13,4 +13,7 @@ public class UserDto {
 
     String fname;
     String lname;
+    String Country;
+    String email;
+    String password;
 }
