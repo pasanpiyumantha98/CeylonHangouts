@@ -13,7 +13,7 @@ public class UserDto {
 
     String fname;
     String lname;
-    String Country;
+    String country;
     String email;
     String password;
     String gender;

@@ -6,6 +6,7 @@ import com.example.ceylonhangouts.repo.UserRepo;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
@@ -19,9 +20,14 @@ public class UserService {
     @Autowired
     ModelMapper modelMapper;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     public String RegUser(UserDto userDto){
 
         Integer id = userRepo.getMaxId();
+
+        userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
 
         if(id == null) {
             userDto.setId(1);

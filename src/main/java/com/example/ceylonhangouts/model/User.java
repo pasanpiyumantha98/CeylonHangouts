@@ -17,7 +17,7 @@ public class User {
 
     String fname;
     String lname;
-    String Country;
+    String country;
     String email;
     String password;
 
