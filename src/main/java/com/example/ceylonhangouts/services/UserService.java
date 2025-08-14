@@ -21,6 +21,13 @@ public class UserService {
 
     public String RegUser(UserDto userDto){
 
+        Integer id = userRepo.getMaxId();
+
+        if(id == null) {
+            userDto.setId(1);
+        } else {
+            userDto.setId(++id);
+        }
 
 
         User user = userRepo.getUserByEmail(userDto.getEmail());
@@ -36,4 +43,4 @@ public class UserService {
     }
 
 
-}
+
