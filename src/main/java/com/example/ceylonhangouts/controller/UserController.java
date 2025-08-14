@@ -1,19 +1,30 @@
 package com.example.ceylonhangouts.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.ceylonhangouts.dto.UserDto;
+import com.example.ceylonhangouts.model.User;
+import com.example.ceylonhangouts.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
 @RequestMapping("api/user")
 public class UserController {
 
+    @Autowired
+    UserService userService;
+
     @GetMapping("/hello")
     public String hello() {
         return "hello";
     }
 
+
+    @PostMapping("/register")
+    public String register(@RequestBody UserDto userDto) {
+
+        return userService.RegUser(userDto);
+
+    }
 
 }
