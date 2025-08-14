@@ -26,7 +26,9 @@ public class UserService {
         if(id == null) {
             userDto.setId(1);
         } else {
-            userDto.setId(++id);
+
+            id = id +1 ;
+            userDto.setId(id);
         }
 
 
