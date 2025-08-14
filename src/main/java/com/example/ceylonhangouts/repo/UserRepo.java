@@ -1,4 +1,8 @@
 package com.example.ceylonhangouts.repo;
 
-public interface UserRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepo extends JpaRepository {
+
+
 }
