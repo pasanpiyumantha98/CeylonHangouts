@@ -72,6 +72,9 @@ public class UserService {
 
         public String changepass(UserDto userDto){
 
+            userRepo.updatePassword(userDto.getPassword(), userDto.getId());
+
+            return "Success";
 
         }
 

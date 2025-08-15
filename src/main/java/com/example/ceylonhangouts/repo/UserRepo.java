@@ -14,5 +14,6 @@ public interface UserRepo extends JpaRepository<User, Integer> {
     Integer getMaxId();
 
     @Modifying
-    @Query(value="update user")
+    @Query(value="update user set password=?1 where id=?2", nativeQuery = true)
+    void updatePassword(String password, int id);
 }
