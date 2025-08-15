@@ -55,7 +55,7 @@ public class UserService {
 
         if(user==null)
         {
-            return "Error";
+            return "Error1";
 
         } else {
 
@@ -64,7 +64,7 @@ public class UserService {
                 return "Success";
             } else
             {
-                return "Error";
+                return "Error2";
             }
         }
 
