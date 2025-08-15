@@ -32,4 +32,11 @@ public class UserController {
         return userService.loguser(userDto);
     }
 
+    @PostMapping("/change/pass")
+    public String changePass(@RequestBody UserDto userDto) {
+
+        return userService.changepass(userDto);
+
+    }
+
 }
