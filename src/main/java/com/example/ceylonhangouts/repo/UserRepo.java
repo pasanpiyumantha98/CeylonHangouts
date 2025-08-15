@@ -2,6 +2,7 @@ package com.example.ceylonhangouts.repo;
 
 import com.example.ceylonhangouts.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 public interface UserRepo extends JpaRepository<User, Integer> {
@@ -11,4 +12,7 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 
     @Query(value="select max(id) from user", nativeQuery = true)
     Integer getMaxId();
+
+    @Modifying
+    @Query(value="update user")
 }
