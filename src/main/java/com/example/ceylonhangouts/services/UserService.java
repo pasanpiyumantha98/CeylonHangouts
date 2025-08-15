@@ -48,6 +48,29 @@ public class UserService {
             return "Error";
         }
         }
+
+        public String loguser(UserDto userDto){
+
+        User user = userRepo.getUserByEmail(userDto.getEmail());
+
+        if(user==null)
+        {
+            return "Error";
+
+        } else {
+
+            boolean stat = passwordEncoder.matches(userDto.getPassword(), user.getPassword());
+            if(stat) {
+                return "Success";
+            } else
+            {
+                return "Error";
+            }
+        }
+
+        }
+
+
     }
 
 
